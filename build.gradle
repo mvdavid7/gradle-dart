@@ -1,3 +1,7 @@
+wrapper {
+    gradleVersion = '1.12'
+}
+
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'idea'
