@@ -1,9 +1,10 @@
 wrapper {
-    gradleVersion = '1.12'
+	gradleVersion = '1.12'
 }
 
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 apply plugin: 'idea'
 
 group = 'de.bolchsteinegger'
@@ -34,4 +35,12 @@ dependencies {
 idea.module {
 	downloadJavadoc = true
 	downloadSources = true
+}
+
+publishing {
+	publications {
+		mavenGradlePlugin(MavenPublication) {
+			from components.java
+		}
+	}
 }
